@@ -36,23 +36,13 @@ class Grid extends React.Component {
         const urlParams = `?$orderby=${columnName}%20${sortOrder}`
         const url = `https://services.odata.org/TripPinRESTierService/(S(3jgtctz5a2wyzb0gi3pxikvb))/People${(columnName && sortOrder) ? urlParams : ''}`
 
-        // setTimeout(function () {
-        //     axios.get(url)
-        //         .then(response => {
-        //             this.setState({
-        //                 data: response.data.value,
-        //                 isLoading: false
-        //             })
-        //         });
-        // }, 100000)
-
         axios.get(url)
-        .then(response => {
-            this.setState({
-                data: response.data.value,
-                isLoading: false
-            })
-        });   
+            .then(response => {
+                this.setState({
+                    data: response.data.value,
+                    isLoading: false
+                })
+            });
 
     }
 
@@ -91,25 +81,25 @@ class Grid extends React.Component {
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th onClick={this.onSort('UserName')} className={ this.state.isLoading ? 'disabled' : 'enabled' }>
-                                User Name   
+                            <th onClick={this.onSort('UserName')} className={this.state.isLoading ? 'disabled' : 'enabled'}>
+                                User Name
                                 {this.state.sort.column === 'UserName'
-                                    && (<span className={`fas fa-arrow-${sortTypes[this.state.sort.direction].class}`} />) }
+                                    && (<span className={`fas fa-arrow-${sortTypes[this.state.sort.direction].class}`} />)}
                             </th>
-                            <th onClick={this.onSort('FirstName')} className={ this.state.isLoading ? 'disabled' : 'enabled' }>
-                                First Name   
+                            <th onClick={this.onSort('FirstName')} className={this.state.isLoading ? 'disabled' : 'enabled'}>
+                                First Name
                                 {this.state.sort.column === 'FirstName'
-                                    && (<span className={`fas fa-arrow-${sortTypes[this.state.sort.direction].class}`} />) }
+                                    && (<span className={`fas fa-arrow-${sortTypes[this.state.sort.direction].class}`} />)}
                             </th>
-                            <th onClick={this.onSort('LastName')} className={ this.state.isLoading ? 'disabled' : 'enabled' }>
-                                Last Name   
+                            <th onClick={this.onSort('LastName')} className={this.state.isLoading ? 'disabled' : 'enabled'}>
+                                Last Name
                                 {this.state.sort.column === 'LastName'
-                                    && (<span className={`fas fa-arrow-${sortTypes[this.state.sort.direction].class}`} />) }
+                                    && (<span className={`fas fa-arrow-${sortTypes[this.state.sort.direction].class}`} />)}
                             </th>
-                            <th onClick={this.onSort('Gender')} className={ this.state.isLoading ? 'disabled' : 'enabled' }>
-                            Gender   
+                            <th onClick={this.onSort('Gender')} className={this.state.isLoading ? 'disabled' : 'enabled'}>
+                                Gender
                                 {this.state.sort.column === 'Gender'
-                                    && (<span className={`fas fa-arrow-${sortTypes[this.state.sort.direction].class}`} />) }
+                                    && (<span className={`fas fa-arrow-${sortTypes[this.state.sort.direction].class}`} />)}
                             </th>
                         </tr>
                     </thead>
