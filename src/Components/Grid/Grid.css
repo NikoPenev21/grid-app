@@ -1,0 +1,37 @@
+.GridContainer {
+margin: 40px;
+text-align: left;
+}
+
+#title {
+    margin-bottom: 40px;
+}
+
+.fas {
+    float: right;
+    font-weight: 100;
+    font-style: normal;
+}
+
+th {
+    width: 25%;
+    min-width: 150px;
+}
+
+#loadingIndicator {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0px
+}
+
+th.disabled {
+    pointer-events: none;
+}
+th.enabled {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+  
